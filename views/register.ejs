@@ -1,0 +1,37 @@
+<%- include('partials/header') %>
+
+<div class="m-5 p-5 bg-light">
+	<%- include('partials/message') %>
+	<div>
+		<form class="needs-validation" action="/register" method="POST">
+			<div class="form-row">
+				<div class="col-md-4 md-3 p-3">
+					<label for="validation1">First Name</label>
+					<input class="form-control" id="validation1" type="text" name="firstName" value="<%= typeof firstName != 'undefined' ? firstName : '' %>" >
+				</div>
+				<div class="col-md-4 md-3 p-3">
+					<label for="validation2">Last Name</label>
+					<input class="form-control" id="validation2" type="text" name="lastName" value="<%= typeof lastName != 'undefined' ? lastName : '' %>">
+				</div>
+				<div class="col-md-4 md-3 p-3">
+					<label for="validation3">Email</label>
+					<input class="form-control" id="validation3" type="email" name="email" value="<%= typeof email != 'undefined' ? email : '' %>">
+				</div>
+				<div class="col-md-4 md-3 p-3">
+					<label for="validation4">Phone</label>
+					<input class="form-control" id="validation4" type="number" name="phone" value="<%= typeof phone != 'undefined' ? phone : '' %>">
+				</div>
+				<div class="col-md-4 md-3 p-3">
+					<label for="validation5">Password</label>
+					<input class="form-control" id="validation5" type="password" name="password" >
+				</div>
+			</div>
+			<div class="text-center">
+				<button class="btn btn-primary btn-lg text-center">Submit</button>
+			</div>
+		</form>
+	</div>
+</div>
+
+
+<%- include('partials/footer') %>

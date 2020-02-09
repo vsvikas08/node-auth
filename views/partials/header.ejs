@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lkart</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<style>
+		.jumbotron{
+			background-image: url("https://cdn.pixabay.com/photo/2014/08/08/20/54/laundry-413688_1280.jpg");
+			background-size: cover;
+			background-repeat: no-repeat;
+			display: block;
+			max-width: 100%;
+			height: 500px;
+			opacity: 1.0;
+		}
+	</style>
+</head>
+<body>
+	<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="/">Lkart</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapseId">
+					<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="collapseId">
+				<div class="navbar-nav ml-auto">
+					<a class="nav-item nav-link active" href="/">Home</a>
+					<a class="nav-item nav-link" href="">About</a>
+					<a class="nav-item nav-link" href="">Contact Us</a>
+					<% if(!currentUser){ %>
+					<a class="nav-item nav-link" href="/login">Login</a>
+					<a class="nav-item nav-link" href="/register">Register</a>
+					<% } else{ %>
+					<div class="nav-item dropdown">
+      					<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">My Account</a>
+			      		<div class="dropdown-menu bg-dark">
+			      			<p class="dropdown-item disabled text-uppercase"><%= currentUser.firstName %> <%= currentUser.lastName %></p>
+			      			<div class="dropdown-divider"></div>
+        					<a class="dropdown-item text-white" href="/myorder">My Order</a>
+        					<a class="dropdown-item text-white" href="/logout">Logout</a>
+      					</div>
+    				</div>
+    				<% } %>
+				</div>
+			</div>
+		</div>
+	</nav>
+	
+	
