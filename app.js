@@ -94,7 +94,8 @@ app.post("/register",function(req,res){
 						firstName,
 						lastName,
 						email,
-						phone
+						phone,
+						password
 					});
 					// salting password
 					bcrypt.genSalt(10,(err,salt)=>
